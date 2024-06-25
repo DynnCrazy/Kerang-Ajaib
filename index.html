@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kerang Ajaib</title>
-    <link rel="icon" type="image/png" href="/web-icon.png">
+    <link rel="icon" type="image/png" href="/kerang-ajaib.png">
     <meta property="og:site_name" content="Kerang Ajaib">
-    <meta name="description" content="Kerang ajaib, tanyakan sesuatu padanya...">
+    <meta name="description" content="Kerang ajaib, tanyakan sesuatu kepadanya...">
     <meta name="robots" content="index, follow">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!-- Opt -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body data-aos="fade-in" duration="7000" style="overflow: hidden;">
+<body data-aos="fade-up" duration="7000" style="overflow: hidden;">
     <br>
     <div class="titlediv" id="titlewebka">
         <h1>Kerang Ajaib</h1>
@@ -30,7 +30,7 @@
             <input id="inputkerangajaib" placeholder="Ketik disini..." type="text" required>
 
             <br>
-            <button id="buttonkerangajaib" type="submit" onclick="exampleAlert()">Tanyakan</button>
+            <button id="buttonkerangajaib" type="submit" onclick="getAnswer()">Tanyakan</button>
         </div>
 
         <div class="containeranswer" id="containeranswer">
@@ -53,7 +53,7 @@
     </center>
 
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>

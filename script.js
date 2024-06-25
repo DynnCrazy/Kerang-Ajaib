@@ -1,4 +1,4 @@
-const daftarJawabanKerang = ["Iya", "Tidak", "Tidak tau", "Mungkin Iya", "Mungkin Tidak", "Hmmm", "YNTKTS", "Mustahil", "Mungkin"];
+const daftarJawabanKerang = ["Iya", "Tidak", "Tidak tau", "Mungkin Iya", "Mungkin Tidak", "Hmmm", "Gak Tau", "Kayaknya Iya", "Kayaknya Tidak", "Mungkin"];
 var thenumber = 1;
 var logquestion = '';
 var isAnswer = 'n';
@@ -8,7 +8,7 @@ function getRandomAnswer() {
     return daftarJawabanKerang[jwbAcak];
 }
 
-function exampleAlert() {
+function getAnswer() {
     thenumber += 1;
     var isGenap = (thenumber % 2 === 0);
 
@@ -79,6 +79,12 @@ function tryAgain() {
     div2.classList.toggle('display');
 }
 
+/* document.getElementById('inputkerangajaib').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        getAnswer();
+    }
+}); */
+
 console.log('------------------------------------------------------------------');
 console.log('------------------------------------------------------------------');
 console.log('-- PERATURAN --');
@@ -89,3 +95,4 @@ console.log('4. Jangan spam ya adik - adik');
 console.log('5. Jangan meninggal dunia saat memainkannya');
 console.log('------------------------------------------------------------------');
 console.log('------------------------------------------------------------------');
+console.log('Last update: 2024/06/205 - Dyn Crazy');
