@@ -1,28 +1,34 @@
 const daftarJawabanKerang = ["Iya", "Tidak", "Tidak tau", "Mungkin Iya", "Mungkin Tidak", "Hmmm", "YNTKTS", "Mustahil", "Mungkin"];
 var thenumber = 1;
 var logquestion = '';
+var isAnswer = 'n';
 
 function getRandomAnswer() {
     const jwbAcak = Math.floor(Math.random() * daftarJawabanKerang.length);
     return daftarJawabanKerang[jwbAcak];
 }
-   
 
 function exampleAlert() {
     thenumber += 1;
-    if (thenumber % 2 === 0) {
-        var isGenap = true;
-    } else {
-        var isGenap = false;
-    }
+    var isGenap = (thenumber % 2 === 0);
 
-    if ( thenumber === 10 || thenumber === 20) {
+    if (thenumber === 20 || thenumber === 40) {
         alert('Subscribe YouTube Dyn Crazy');
-    } else if ( thenumber === 32 ) {
+    } else if (thenumber === 60) {
         alert('Cepetan Subscribe YouTube Dyn Crazy Woy!');
-    } else if ( thenumber === 50 ) {
+    } else if (thenumber === 100) {
         alert('SUBSCRIBE YOUTUBE DYN CRAZY SEKARANG AJG!!');
     }
+
+    var pertanyaan = document.getElementById('inputkerangajaib').value.trim().toLowerCase();
+
+    if (isAnswer === 'n' && pertanyaan === '') {
+        alert('Pertanyaan tidak boleh kosong!');
+        return;
+    }
+
+    document.getElementById('inputkerangajaib').value = '';
+    isAnswer = 'y';
 
     var div1 = document.getElementById('containercontent');
     div1.classList.toggle('hidden');
@@ -30,63 +36,47 @@ function exampleAlert() {
     var div2 = document.getElementById('containeranswer');
     div2.classList.toggle('display');
 
-    if (isGenap == true) {
-        var pertanyaan = document.getElementById('inputkerangajaib').value.toLowerCase();
-        document.getElementById('inputkerangajaib').value = '';
+    if (pertanyaan === 'display:none' || pertanyaan === 'display:none;' || pertanyaan === 'display:hidden' || pertanyaan === 'display:hidden;') {
+        document.getElementById('titlewebka').style.display = 'none';
+        document.getElementById('divcontcenter').style.display = 'none';
+        document.getElementById('authorwebka').style.display = 'none';
+    }
 
-        if (pertanyaan == 'display:none' || pertanyaan == 'display:none;'  || pertanyaan == 'display:hidden' || pertanyaan == 'display:hidden;') {
-            document.getElementById('titlewebka').style.display = 'none';
-            document.getElementById('divcontcenter').style.display = 'none';
-            document.getElementById('authorwebka').style.display = 'none';
-        }
-
-        if (logquestion == pertanyaan) {
-            document.getElementById('answerKA').innerHTML = 'Tadi Udh Aku Jawab';
-        } else {
-
-            if ( pertanyaan == 'kontol' || pertanyaan == 'asu' || pertanyaan == 'goblok' || pertanyaan == 'tolol' || pertanyaan == 'ngentod' || pertanyaan == 'ngtd' || pertanyaan == 'memek' || pertanyaan == 'ngentot' || pertanyaan == 'sprema' || pertanyaan == 'goblk' || pertanyaan == 'bangsat' || pertanyaan == 'tai' || pertanyaan == 'jancok' || pertanyaan == 'jnck' ) {
-                document.getElementById('answerKA').innerHTML = pertanyaan;
-                alert('Kamu terkena spam alert karena menggunakan kata terlarang!');
+    if (logquestion === pertanyaan) {
+        document.getElementById('answerKA').innerHTML = 'Tadi Udh Aku Jawab';
+    } else {
+        if (['kontol', 'asu', 'goblok', 'tolol', 'ngentod', 'ngtd', 'memek', 'ngentot', 'sprema', 'goblk', 'bangsat', 'tai', 'jancok', 'jnck'].includes(pertanyaan)) {
+            document.getElementById('answerKA').innerHTML = pertanyaan;
+            alert('Kamu terkena spam alert karena menggunakan kata terlarang!');
+            for (let i = 0; i < 15; i++) {
                 alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                alert(pertanyaan);
-                document.getElementById('buttonkerangajaib').innerHTML = pertanyaan;
-                document.getElementById('buttonkerangajaib2').innerHTML = pertanyaan;
-                document.getElementById('titlewebka').innerHTML = pertanyaan;
-                document.getElementById('descinca').innerHTML = pertanyaan;
-                document.getElementById('descincc').innerHTML = pertanyaan;
-                document.getElementById('linkauthor').innerHTML = pertanyaan;
-                document.getElementById('inputkerangajaib').placeholder = pertanyaan;
-            } else {
-                var jawabanKerangAjaib = getRandomAnswer();
-                document.getElementById('answerKA').innerHTML = jawabanKerangAjaib;
-                logquestion = pertanyaan.toLowerCase();
-                console.log('Question log: ' + logquestion)
             }
-
+            document.getElementById('buttonkerangajaib').innerHTML = pertanyaan;
+            document.getElementById('buttonkerangajaib2').innerHTML = pertanyaan;
+            document.getElementById('titlewebka').innerHTML = pertanyaan;
+            document.getElementById('descinca').innerHTML = pertanyaan;
+            document.getElementById('descincc').innerHTML = pertanyaan;
+            document.getElementById('linkauthor').innerHTML = pertanyaan;
+            document.getElementById('inputkerangajaib').placeholder = pertanyaan;
+            document.getElementById('errordiv').style.display = 'block';
+            document.getElementById('k1img').style.display = 'none';
+            document.getElementById('k2img').style.display = 'none';
+        } else {
+            var jawabanKerangAjaib = getRandomAnswer();
+            document.getElementById('answerKA').innerHTML = jawabanKerangAjaib;
+            logquestion = pertanyaan;
+            console.log('Question log: ' + logquestion);
         }
     }
 }
 
 function tryAgain() {
-    exampleAlert();
+    isAnswer = 'n';
+    var div1 = document.getElementById('containercontent');
+    div1.classList.toggle('hidden');
+
+    var div2 = document.getElementById('containeranswer');
+    div2.classList.toggle('display');
 }
 
 console.log('------------------------------------------------------------------');

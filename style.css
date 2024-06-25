@@ -160,6 +160,24 @@ body {
     margin: 10px;
     margin-bottom: -7px;
 }
+.contauthor {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.authorbawah {
+    bottom: 1px;
+    position: absolute;
+    text-align: center;
+}
+#errordiv {
+    height: 50%;
+    width: 30%;
+    background-color: white;
+    margin-left: 10%;
+    transform: skew(4deg);
+    display: none;
+}
 
 /* === Untuk Hp === */
 @media only screen and (max-width: 767px) {
@@ -228,9 +246,6 @@ body {
         width: 100px;
         margin: 10px;
         margin-bottom: -7px;
-    }
-    .authorbawah {
-        margin-top: -50px;
     }
     
 }
