@@ -61,7 +61,13 @@ function getAnswer() {
             document.getElementById('errordiv').style.display = 'block';
             document.getElementById('k1img').style.display = 'none';
             document.getElementById('k2img').style.display = 'none';
-        } else {
+        } else if (['halo', 'hai', 'hello', 'p', 'hay'].includes(pertanyaan)) {
+            document.getElementById('answerKA').innerHTML = pertanyaan;
+        } else if (['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'].includes(pertanyaan)) {
+            document.getElementById('answerKA').innerHTML = 'Kamu kenapa ?';
+        } else if (!isNaN(pertanyaan) && pertanyaan !== '') {
+            document.getElementById('answerKA').innerHTML = 'Angka apa itu ?';
+        } else  {
             var jawabanKerangAjaib = getRandomAnswer();
             document.getElementById('answerKA').innerHTML = jawabanKerangAjaib;
             logquestion = pertanyaan;
